@@ -13,10 +13,6 @@
     "userMenu": "User menu",
     "manageSuperusers": "Manage superusers"
   },
-  "theme": {
-    "light": "Light mode",
-    "dark": "Dark mode"
-  },
   "login": {
     "subtitle": "Admin Dashboard",
     "email": "Email",

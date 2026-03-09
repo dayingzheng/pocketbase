@@ -180,16 +180,18 @@ export function CollectionRulesTab({ collection, onChange }: CollectionRulesTabP
               onChange={(rule) => onChange({ createRule: rule })}
               collection={collection}
               afterLabel={
-                <TooltipProvider>
-                  <Tooltip>
-                    <TooltipTrigger asChild>
-                      <Info className="h-3.5 w-3.5 text-slate-400 hover:text-slate-600 cursor-help" />
-                    </TooltipTrigger>
-                    <TooltipContent side="top" className="max-w-xs">
-                      <p>{t('apiRules.createRuleTooltip', 'The main record fields hold the values that are going to be inserted in the database.')}</p>
-                    </TooltipContent>
-                  </Tooltip>
-                </TooltipProvider>
+                collection.createRule !== null && (
+                  <TooltipProvider>
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <Info className="h-3.5 w-3.5 text-slate-400 hover:text-slate-600 cursor-help" />
+                      </TooltipTrigger>
+                      <TooltipContent side="top" className="max-w-xs">
+                        <p>{t('apiRules.createRuleTooltip', 'The main record fields hold the values that are going to be inserted in the database.')}</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
+                )
               }
             />
 
@@ -200,16 +202,18 @@ export function CollectionRulesTab({ collection, onChange }: CollectionRulesTabP
               onChange={(rule) => onChange({ updateRule: rule })}
               collection={collection}
               afterLabel={
-                <TooltipProvider>
-                  <Tooltip>
-                    <TooltipTrigger asChild>
-                      <Info className="h-3.5 w-3.5 text-slate-400 hover:text-slate-600 cursor-help" />
-                    </TooltipTrigger>
-                    <TooltipContent side="top" className="max-w-xs">
-                      <p className="whitespace-pre-line">{t('apiRules.updateRuleTooltip', 'The main record fields represent the old/existing record field values.\nTo target the newly submitted ones you can use @request.body.*')}</p>
-                    </TooltipContent>
-                  </Tooltip>
-                </TooltipProvider>
+                collection.updateRule !== null && (
+                  <TooltipProvider>
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <Info className="h-3.5 w-3.5 text-slate-400 hover:text-slate-600 cursor-help" />
+                      </TooltipTrigger>
+                      <TooltipContent side="top" className="max-w-xs">
+                        <p className="whitespace-pre-line">{t('apiRules.updateRuleTooltip', 'The main record fields represent the old/existing record field values.\nTo target the newly submitted ones you can use @request.body.*')}</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
+                )
               }
             />
 
